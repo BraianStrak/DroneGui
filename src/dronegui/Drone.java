@@ -22,7 +22,7 @@ public class Drone {
         Random random = new Random();
         mAngle = random.nextInt(360);
         mSpeed = 1;
-        mDroneSize = 75;
+        mDroneSize = 25;
     }
 
     public Image getImage(){
