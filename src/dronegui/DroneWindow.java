@@ -21,6 +21,7 @@ public class DroneWindow extends Application {
     private MyCanvas mc;
     private DroneArena mArena;
     private boolean mAnimationOn;
+    private String mEntityFlag = "drone";
 
     public void drawStatus() {
         rtPane.getChildren().clear();
@@ -33,7 +34,7 @@ public class DroneWindow extends Application {
                 new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent e) {
-                        mArena.setArena(mc, e.getX(), e.getY());
+                        mArena.setArena(mc, e.getX(), e.getY(), mEntityFlag);
                         mArena.drawArena(mc);
                         drawStatus();
                     }
@@ -59,7 +60,24 @@ public class DroneWindow extends Application {
             }
         });
 
-        return new HBox(new Label(" Animation: "), btnAnimOn, btnAnimOff);
+        Button btnInsertDrone = new Button("Drone");
+        btnInsertDrone.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //set flag to make drone
+                mEntityFlag = "drone";
+            }
+        });
+
+        Button btnInsertWall = new Button("Tree");
+        btnInsertWall.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mEntityFlag = "wall";
+            }
+        });
+
+        return new HBox(new Label(" Animation: "), btnAnimOn, btnAnimOff, btnInsertDrone, btnInsertWall);
     }
 
     @Override
