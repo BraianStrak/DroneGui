@@ -4,59 +4,38 @@ import javafx.scene.image.Image;
 
 import java.util.Random;
 
-public class Drone {
-    private Image mImage;
-    private double mDroneSize;
-    private double mX, mY;
-    public static int GlobalDroneId;
-    public int mId;
-    private double mRad, mAngle, mSpeed;
+public class Drone extends Entity{
+    private double mAngle, mSpeed;
 
     public Drone(double x, double y) {
-        GlobalDroneId++;
-        mId = GlobalDroneId;
+        GlobalEntityId++;
+        mId = GlobalEntityId;
         mX = x;
         mY = y;
         mImage = new Image(getClass().getResourceAsStream("drone.png"));
-        mRad = 20;
+        mRadius = 25;
         Random random = new Random();
         mAngle = random.nextInt(360);
         mSpeed = 1;
-        mDroneSize = 25;
     }
 
-    public Image getImage(){
-        return mImage;
+    public double getAngle(){
+        return mAngle;
     }
 
-    public double getXPosition() {
-        return mX;
-    }
-
-    public double getYPosition() {
-        return mY;
-    }
-
-    public double getSize(){
-        return mDroneSize;
-    }
-
-    public void setXPosition(double x){
-        mX = x;
-    }
-
-    public void setYPosition(double y){
-        mY = y;
+    public void setAngle(double angle){
+        mAngle = angle;
     }
 
     public String toString(){
-        return String.format("Drone %d is at %.1f, %.1f", mId, mX, mY);
+        return String.format("Entity %d (Drone) is at %.1f, %.1f", mId, mX, mY);
     }
 
     public void checkDrone(MyCanvas mc) {
-        if (mX < mRad || mX > mc.getXCanvasSize() - mRad) mAngle = 180 - mAngle;
+        if (mX < mRadius || mX > mc.getXCanvasSize() - mRadius) mAngle = 180 - mAngle;
+        // if the position is less than the radius of the drone or if drone hits a wall
         // if drone hit (tried to go through) left or right walls, set mirror angle, being 180-angle
-        if (mY < mRad || mY > mc.getYCanvasSize() - mRad) mAngle = -mAngle;
+        if (mY < mRadius || mY > mc.getYCanvasSize() - mRadius) mAngle = -mAngle;
         // if drone hit (tried to go through) top or bottom walls, set mirror angle, being -angle
     }
 
@@ -65,6 +44,4 @@ public class Drone {
         mX += mSpeed * Math.cos(radAngle);		// new X position
         mY += mSpeed * Math.sin(radAngle);		// new Y position
     }
-
-
 }

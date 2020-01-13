@@ -1,6 +1,8 @@
 package dronegui;
 
 
+import javafx.geometry.Rectangle2D;
+
 import java.util.ArrayList;
 
 public class DroneArena {
@@ -22,10 +24,15 @@ public class DroneArena {
         }
     }
 
-
     public void updateArena(MyCanvas mc){
         //call check and adjust on all drones
         for(Drone d: mDrones){
+            for(Drone e: mDrones){ //collision detection
+                if(!d.equals(e) && d.getBounds().intersects(e.getBounds())){
+                    d.setAngle(d.getAngle()-180); //work in progress
+                    e.setAngle(e.getAngle()-180);
+                }
+            }
             d.checkDrone(mc);
             d.adjustDrone();
         }
@@ -39,5 +46,4 @@ public class DroneArena {
         }
         return append;
     }
-
 }

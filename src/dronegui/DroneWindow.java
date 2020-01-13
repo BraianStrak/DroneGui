@@ -95,8 +95,8 @@ public class DroneWindow extends Application {
             public void handle(long currentNanoTime) {
                 // define handle for what do at this time
                 if (mAnimationOn) {
-                    mArena.updateArena(mc);			// find new position of ball
-                    mArena.drawArena(mc);				// draw ball in new position
+                    mArena.updateArena(mc);			// finds new positions
+                    mArena.drawArena(mc);				// draw entities in new position
                     drawStatus();
                 }
             }
