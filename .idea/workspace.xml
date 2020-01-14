@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dronegui/PredatorDrone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dronegui/predator.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Drone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Drone.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneArena.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneArena.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Drone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/DroneArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/DroneArena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dronegui/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dronegui/DroneWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/DroneWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,26 +227,26 @@
     </state>
     <state x="332" y="119" width="682" height="505" key="FileChooserDialogImpl/0.0.1366.748@0.0.1366.748" timestamp="1574937032642" />
     <state x="332" y="139" width="424" height="482" key="FileChooserDialogImpl/0.20.1366.748@0.20.1366.748" timestamp="1578572641740" />
-    <state width="1324" height="171" key="GridCell.Tab.0.bottom" timestamp="1578996885316">
+    <state width="1324" height="43" key="GridCell.Tab.0.bottom" timestamp="1579010980647">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.bottom/0.0.1366.748@0.0.1366.748" timestamp="1574949736580" />
-    <state width="1324" height="171" key="GridCell.Tab.0.bottom/0.20.1366.748@0.20.1366.748" timestamp="1578996885316" />
-    <state width="1324" height="171" key="GridCell.Tab.0.center" timestamp="1578996885315">
+    <state width="1324" height="43" key="GridCell.Tab.0.bottom/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
+    <state width="1324" height="43" key="GridCell.Tab.0.center" timestamp="1579010980647">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.center/0.0.1366.748@0.0.1366.748" timestamp="1574949736579" />
-    <state width="1324" height="171" key="GridCell.Tab.0.center/0.20.1366.748@0.20.1366.748" timestamp="1578996885315" />
-    <state width="1324" height="171" key="GridCell.Tab.0.left" timestamp="1578996885315">
+    <state width="1324" height="43" key="GridCell.Tab.0.center/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
+    <state width="1324" height="43" key="GridCell.Tab.0.left" timestamp="1579010980647">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.left/0.0.1366.748@0.0.1366.748" timestamp="1574949736577" />
-    <state width="1324" height="171" key="GridCell.Tab.0.left/0.20.1366.748@0.20.1366.748" timestamp="1578996885315" />
-    <state width="1324" height="171" key="GridCell.Tab.0.right" timestamp="1578996885316">
+    <state width="1324" height="43" key="GridCell.Tab.0.left/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
+    <state width="1324" height="43" key="GridCell.Tab.0.right" timestamp="1579010980647">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.right/0.0.1366.748@0.0.1366.748" timestamp="1574949736579" />
-    <state width="1324" height="171" key="GridCell.Tab.0.right/0.20.1366.748@0.20.1366.748" timestamp="1578996885316" />
+    <state width="1324" height="43" key="GridCell.Tab.0.right/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
     <state x="166" y="20" width="1024" height="746" key="SettingsEditor" timestamp="1575585386799">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
@@ -260,9 +262,9 @@
     </state>
     <state x="0" y="81" width="1356" height="584" key="new project wizard/0.0.1366.748@0.0.1366.748" timestamp="1574937348941" />
     <state x="0" y="101" key="new project wizard/0.20.1366.748@0.20.1366.748" timestamp="1578675092166" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578917852569">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579006847531">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.20.1366.748@0.20.1366.748" timestamp="1578917852569" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.20.1366.748@0.20.1366.748" timestamp="1579006847531" />
   </component>
 </project>

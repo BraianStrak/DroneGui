@@ -16,6 +16,8 @@ public class DroneArena {
         switch (entityFlag){
             case "drone":
                 mDrones.add(new Drone(x, y)); break;
+            case "predator":
+                mDrones.add(new PredatorDrone(x, y)); break;
             case "wall":
                 mWalls.add(new Wall(x, y)); break;
             default:
@@ -43,13 +45,17 @@ public class DroneArena {
         Random random = new Random();
         //call check and adjust on all drones
         for(Drone d: mDrones){
-            if(mDrones != null) {
+            if(d.getAlive() == false){
+                mDrones.remove(d);
+            }
+
+            if(mDrones != null && d != null) {
                 for (Drone e : mDrones) { //collision detection
-                    d.interactWithDrone(e);
+                    d.interact(e);
                 }
             }
 
-            if(mWalls != null) {
+            if(mWalls != null && d != null) {
                 for (Wall w : mWalls) {
                     if (d.getBounds().intersects(w.getBounds())) {
                         d.setAngle(d.getAngle() - 180);

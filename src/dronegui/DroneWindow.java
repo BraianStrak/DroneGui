@@ -77,7 +77,16 @@ public class DroneWindow extends Application {
             }
         });
 
-        return new HBox(new Label(" Animation: "), btnAnimOn, btnAnimOff, btnInsertDrone, btnInsertWall);
+        Button btnInsertPredator = new Button("Predator");
+        btnInsertPredator.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mEntityFlag = "predator";
+            }
+        });
+
+
+        return new HBox(new Label(" Animation: "), btnAnimOn, btnAnimOff, btnInsertDrone, btnInsertWall, btnInsertPredator);
     }
 
     @Override
