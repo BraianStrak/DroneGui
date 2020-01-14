@@ -44,4 +44,12 @@ public class Drone extends Entity{
         mX += mSpeed * Math.cos(radAngle);		// new X position
         mY += mSpeed * Math.sin(radAngle);		// new Y position
     }
+
+    public void interactWithDrone(Drone e){ //just do this to change the drone's behaviour
+        Random random = new Random();
+        if (!this.equals(e) && this.getBounds().intersects(e.getBounds())) {
+            this.setAngle(random.nextInt( 360));
+            e.setAngle(random.nextInt(360));
+        }
+    }
 }

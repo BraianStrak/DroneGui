@@ -1,9 +1,7 @@
 package dronegui;
 
-
-import javafx.geometry.Rectangle2D;
-
 import java.util.ArrayList;
+import java.util.Random;
 
 public class DroneArena {
     private ArrayList<Drone> mDrones;
@@ -42,14 +40,12 @@ public class DroneArena {
     }
 
     public void updateArena(MyCanvas mc){
+        Random random = new Random();
         //call check and adjust on all drones
         for(Drone d: mDrones){
             if(mDrones != null) {
                 for (Drone e : mDrones) { //collision detection
-                    if (!d.equals(e) && d.getBounds().intersects(e.getBounds())) {
-                        d.setAngle(d.getAngle() - 180); //work in progress
-                        e.setAngle(e.getAngle() - 180);
-                    }
+                    d.interactWithDrone(e);
                 }
             }
 

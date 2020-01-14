@@ -2,7 +2,6 @@ package dronegui;
 
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
-import javafx.scene.shape.Rectangle;
 
 public abstract class Entity {
     protected Image mImage;
