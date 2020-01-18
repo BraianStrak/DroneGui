@@ -7,8 +7,8 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -39,6 +39,29 @@ public class DroneWindow extends Application {
                         drawStatus();
                     }
                 });
+    }
+
+    private VBox setMenu(){
+        MenuBar menuBar = new MenuBar();
+        VBox menuBox = new VBox(menuBar);
+        Menu fileMenu = new Menu("File");
+        menuBar.getMenus().add(fileMenu);
+
+        MenuItem save = new MenuItem("save");
+        MenuItem load = new MenuItem("load");
+
+        fileMenu.getItems().add(save);
+        fileMenu.getItems().add(load);
+
+        save.setOnAction((e -> {
+            //call save function in mArena
+        }));
+
+        load.setOnAction((e -> {
+            //call load function in mArena
+        }));
+
+        return menuBox;
     }
 
     private HBox setButtons(){
@@ -85,8 +108,17 @@ public class DroneWindow extends Application {
             }
         });
 
+        Button btnInsertPlayer = new Button("Player");
+        btnInsertPlayer.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mEntityFlag = "player";
+            }
+        });
 
-        return new HBox(new Label(" Animation: "), btnAnimOn, btnAnimOff, btnInsertDrone, btnInsertWall, btnInsertPredator);
+
+        return new HBox(new Label(" Animation: "), btnAnimOn, btnAnimOff,
+                btnInsertDrone, btnInsertWall, btnInsertPredator, btnInsertPlayer);
     }
 
     @Override
@@ -116,6 +148,8 @@ public class DroneWindow extends Application {
 
         bp.setBottom(setButtons());					// add buttons to bottom
 
+        bp.setTop(setMenu());                       // add menu top top
+
         // for animation, note start time
         new AnimationTimer()			// create timer
         {
@@ -131,6 +165,15 @@ public class DroneWindow extends Application {
 
         Scene scene = new Scene(bp, canvasSize*1.5, canvasSize*1.2);
         // create scene so bigger than canvas,
+
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(mArena.getPlayer() != null) {
+                    mArena.pressedKey(event, mc);
+                }
+            }
+        });
 
         stagePrimary.setScene(scene);
         stagePrimary.show();

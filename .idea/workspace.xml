@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dronegui/PredatorDrone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dronegui/predator.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dronegui/PlayerDrone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dronegui/playerdrone.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Drone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Drone.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneArena.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneArena.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/PredatorDrone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/PredatorDrone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Wall.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Drone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/DroneArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/DroneArena.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/DroneWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/DroneWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dronegui/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dronegui/PredatorDrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/PredatorDrone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dronegui/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Wall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +227,10 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="491" y="67" width="374" height="624" key="#com.intellij.ide.util.MemberChooser" timestamp="1579186067182">
+      <screen x="0" y="20" width="1366" height="748" />
+    </state>
+    <state x="491" y="67" width="374" height="624" key="#com.intellij.ide.util.MemberChooser/0.20.1366.748@0.20.1366.748" timestamp="1579186067182" />
     <state x="529" y="266" width="298" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1574936865538">
       <screen x="0" y="0" width="1366" height="748" />
     </state>
@@ -227,26 +240,26 @@
     </state>
     <state x="332" y="119" width="682" height="505" key="FileChooserDialogImpl/0.0.1366.748@0.0.1366.748" timestamp="1574937032642" />
     <state x="332" y="139" width="424" height="482" key="FileChooserDialogImpl/0.20.1366.748@0.20.1366.748" timestamp="1578572641740" />
-    <state width="1324" height="43" key="GridCell.Tab.0.bottom" timestamp="1579010980647">
+    <state width="1324" height="70" key="GridCell.Tab.0.bottom" timestamp="1579356067907">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.bottom/0.0.1366.748@0.0.1366.748" timestamp="1574949736580" />
-    <state width="1324" height="43" key="GridCell.Tab.0.bottom/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
-    <state width="1324" height="43" key="GridCell.Tab.0.center" timestamp="1579010980647">
+    <state width="1324" height="70" key="GridCell.Tab.0.bottom/0.20.1366.748@0.20.1366.748" timestamp="1579356067907" />
+    <state width="1324" height="70" key="GridCell.Tab.0.center" timestamp="1579356067907">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.center/0.0.1366.748@0.0.1366.748" timestamp="1574949736579" />
-    <state width="1324" height="43" key="GridCell.Tab.0.center/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
-    <state width="1324" height="43" key="GridCell.Tab.0.left" timestamp="1579010980647">
+    <state width="1324" height="70" key="GridCell.Tab.0.center/0.20.1366.748@0.20.1366.748" timestamp="1579356067907" />
+    <state width="1324" height="70" key="GridCell.Tab.0.left" timestamp="1579356067905">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.left/0.0.1366.748@0.0.1366.748" timestamp="1574949736577" />
-    <state width="1324" height="43" key="GridCell.Tab.0.left/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
-    <state width="1324" height="43" key="GridCell.Tab.0.right" timestamp="1579010980647">
+    <state width="1324" height="70" key="GridCell.Tab.0.left/0.20.1366.748@0.20.1366.748" timestamp="1579356067905" />
+    <state width="1324" height="70" key="GridCell.Tab.0.right" timestamp="1579356067907">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.right/0.0.1366.748@0.0.1366.748" timestamp="1574949736579" />
-    <state width="1324" height="43" key="GridCell.Tab.0.right/0.20.1366.748@0.20.1366.748" timestamp="1579010980647" />
+    <state width="1324" height="70" key="GridCell.Tab.0.right/0.20.1366.748@0.20.1366.748" timestamp="1579356067907" />
     <state x="166" y="20" width="1024" height="746" key="SettingsEditor" timestamp="1575585386799">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
@@ -262,9 +275,9 @@
     </state>
     <state x="0" y="81" width="1356" height="584" key="new project wizard/0.0.1366.748@0.0.1366.748" timestamp="1574937348941" />
     <state x="0" y="101" key="new project wizard/0.20.1366.748@0.20.1366.748" timestamp="1578675092166" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579006847531">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579183851432">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.20.1366.748@0.20.1366.748" timestamp="1579006847531" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.20.1366.748@0.20.1366.748" timestamp="1579183851432" />
   </component>
 </project>

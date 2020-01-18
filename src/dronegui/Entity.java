@@ -30,6 +30,10 @@ public abstract class Entity {
         return new Rectangle2D(mX, mY, mRadius, mRadius);
     }
 
+    public Rectangle2D getFutureBounds(double x, double y){
+        return new Rectangle2D(x, y, mRadius, mRadius);
+    }
+
     public abstract String toString();
 
     public Image getImage(){

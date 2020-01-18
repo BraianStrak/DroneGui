@@ -15,4 +15,10 @@ public class Wall extends Entity {
     public String toString(){
         return String.format("Entity %d (Tree) is at %.1f, %.1f", mId, mX, mY);
     }
+
+    public void interact(Drone e) {
+        if (e.getBounds().intersects(this.getBounds())) {
+            e.setAngle(e.getAngle() - 180);
+        }
+    }
 }

@@ -6,8 +6,6 @@ import java.util.Random;
 
 public class Drone extends Entity{
     protected double mAngle, mSpeed;
-    protected boolean mAlive;
-    protected boolean mIsPrey = true;
 
     public Drone(){
 
@@ -18,7 +16,6 @@ public class Drone extends Entity{
         mId = GlobalEntityId;
         mX = x;
         mY = y;
-        mAlive = true;
         mImage = new Image(getClass().getResourceAsStream("drone.png"));
         mRadius = 25;
         Random random = new Random();
@@ -26,13 +23,6 @@ public class Drone extends Entity{
         mSpeed = 0.5;
     }
 
-    public boolean getAlive(){
-        return mAlive;
-    }
-
-    public void setAlive(boolean alive){
-        mAlive = alive;
-    }
 
     public double getAngle(){
         return mAngle;
@@ -40,10 +30,6 @@ public class Drone extends Entity{
 
     public void setAngle(double angle){
         mAngle = angle;
-    }
-
-    public boolean isPrey(){
-        return mIsPrey;
     }
 
     public String toString(){
@@ -64,10 +50,10 @@ public class Drone extends Entity{
         mY += mSpeed * Math.sin(radAngle);		// new Y position
     }
 
-    public void interact(Drone e){ //just do this to change the drone's behaviour
+    public void interact(Drone e){
         Random random = new Random();
         if (!this.equals(e) && this.getBounds().intersects(e.getBounds())) {
-            this.setAngle(random.nextInt( 360));
+            this.setAngle(random.nextInt(360));
             e.setAngle(random.nextInt(360));
         }
     }
