@@ -53,9 +53,11 @@ public class DroneWindow extends Application {
 
         MenuItem save = new MenuItem("save");
         MenuItem load = new MenuItem("load");
+        MenuItem clear = new MenuItem("clear all");
 
         fileMenu.getItems().add(save);
         fileMenu.getItems().add(load);
+        fileMenu.getItems().add(clear);
 
         save.setOnAction((e -> {
             TextInputDialog saveDialog = new TextInputDialog("filename.txt");
@@ -84,6 +86,14 @@ public class DroneWindow extends Application {
                 drawStatus();
             }));
         }));
+
+
+        clear.setOnAction((e -> {
+            mArena.clearArena();
+            drawStatus();
+            mArena.drawArena(mc);
+        }));
+
 
         return menuBox;
     }
@@ -182,6 +192,9 @@ public class DroneWindow extends Application {
 
         bp.setTop(setMenu());                       // add menu top top
 
+        mArena.drawArena(mc);                       //draw so background is viewable
+        drawStatus();
+
         // for animation, note start time
         new AnimationTimer()			// create timer
         {
@@ -195,7 +208,7 @@ public class DroneWindow extends Application {
             }
         }.start();					// start it
 
-        Scene scene = new Scene(bp, canvasSize*1.6, canvasSize*1.3);
+        Scene scene = new Scene(bp, canvasSize*1.9, canvasSize*1.3);
         // create scene so bigger than canvas,
 
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {

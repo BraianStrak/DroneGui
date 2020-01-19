@@ -13,7 +13,7 @@ public class HitpointsDrone extends Drone {
         mX = x;
         mY = y;
         mImage = new Image(getClass().getResourceAsStream("hpdrone.png"));
-        mSpeed = 0.5;
+        mSpeed = 2;
         mRadius = 25;
         mHitPoints = 100;
     }
@@ -24,7 +24,7 @@ public class HitpointsDrone extends Drone {
         mX = x;
         mY = y;
         mImage = new Image(getClass().getResourceAsStream("hpdrone.png"));
-        mSpeed = 0.5;
+        mSpeed = 2;
         mRadius = 25;
         mHitPoints = hp;
     }

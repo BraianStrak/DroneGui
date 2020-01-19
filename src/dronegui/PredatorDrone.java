@@ -17,7 +17,7 @@ public class PredatorDrone extends Drone {
         mRadius = 30;
         Random random = new Random();
         mAngle = random.nextInt(360);
-        mSpeed = 0.4;
+        mSpeed = 1.6;
     }
 
     public Drone getTarget() {

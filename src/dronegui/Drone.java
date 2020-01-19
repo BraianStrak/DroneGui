@@ -20,7 +20,7 @@ public class Drone extends Entity{
         mRadius = 25;
         Random random = new Random();
         mAngle = random.nextInt(360);
-        mSpeed = 0.5;
+        mSpeed = 2;
     }
 
 

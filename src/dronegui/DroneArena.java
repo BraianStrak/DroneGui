@@ -1,5 +1,6 @@
 package dronegui;
 
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
@@ -20,6 +21,11 @@ public class DroneArena {
     public DroneArena(){
         mDrones = new ArrayList<>();
         mWalls = new ArrayList<>();
+
+        //providing three default drones
+        mDrones.add(new Drone(100, 100));
+        mDrones.add(new Drone(250, 250));
+        mDrones.add(new Drone(350, 200));
     }
 
     public PlayerDrone getPlayer(){
@@ -50,6 +56,9 @@ public class DroneArena {
 
     public void drawArena(MyCanvas mc){
         mc.clearCanvas();
+        Image image = new Image(getClass().getResourceAsStream("background.png"));
+
+        mc.drawImage(image, mc.getXCanvasSize()/2, mc.getYCanvasSize()/2, mc.getYCanvasSize());
 
         if(mPlayer != null){
             mc.drawImage(mPlayer.getImage(), mPlayer.getXPosition(), mPlayer.getYPosition(), mPlayer.getSize());
@@ -113,6 +122,11 @@ public class DroneArena {
     public String toString(){
         //returns positions of all drones
         String append = new String();
+        append += "Entity Information: " + "\n";
+        for(int i = 0; i<46; i++){
+            append += "_";
+        }
+        append += "\n";
         if(mDrones != null) {
             for (Drone d : mDrones) {
                 append += d.toString() + "\n";
@@ -190,15 +204,19 @@ public class DroneArena {
         }
     }
 
+    public void clearArena(){
+        //clear all of the current arena.
+        mDrones.clear();
+        mWalls.clear();
+        mPlayer = null;
+    }
+
     public void load(String fileName){
         String[] strArray;
         double tempX, tempY;
         int tempHP;
 
-        //clear all of the current arena.
-        mDrones.clear();
-        mWalls.clear();
-        mPlayer = null;
+        clearArena();
 
         //create reader for the file.
         Scanner scanner = null;
