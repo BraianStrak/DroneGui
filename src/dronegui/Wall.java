@@ -3,6 +3,9 @@ package dronegui;
 import javafx.scene.image.Image;
 
 public class Wall extends Entity {
+
+    public Wall (){ }
+
     public Wall(double x, double y) {
         GlobalEntityId++;
         mId = GlobalEntityId;

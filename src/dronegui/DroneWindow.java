@@ -12,8 +12,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.util.Optional;
 
 public class DroneWindow extends Application {
     private int canvasSize = 512;
@@ -54,11 +58,31 @@ public class DroneWindow extends Application {
         fileMenu.getItems().add(load);
 
         save.setOnAction((e -> {
-            //call save function in mArena
+            TextInputDialog saveDialog = new TextInputDialog("filename.txt");
+            saveDialog.setTitle("Save Arena");
+            saveDialog.setHeaderText("Enter File Name");
+            saveDialog.setHeaderText("Enter File Name");
+
+            Optional<String> result = saveDialog.showAndWait();
+
+            result.ifPresent((name -> {
+                mArena.save(name);
+            }));
         }));
 
         load.setOnAction((e -> {
-            //call load function in mArena
+            TextInputDialog loadDialog = new TextInputDialog("filename.txt");
+            loadDialog.setTitle("Load Arena");
+            loadDialog.setHeaderText("Enter File Name");
+            loadDialog.setHeaderText("Enter File Name");
+
+            Optional<String> result = loadDialog.showAndWait();
+
+            result.ifPresent((name -> {
+                mArena.load(name);
+                mArena.drawArena(mc);
+                drawStatus();
+            }));
         }));
 
         return menuBox;
@@ -116,9 +140,17 @@ public class DroneWindow extends Application {
             }
         });
 
+        Button btnInsertHitpointsDrone = new Button("HP Drone");
+        btnInsertHitpointsDrone.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mEntityFlag = "hitpointsdrone";
+            }
+        });
+
 
         return new HBox(new Label(" Animation: "), btnAnimOn, btnAnimOff,
-                btnInsertDrone, btnInsertWall, btnInsertPredator, btnInsertPlayer);
+                btnInsertDrone, btnInsertWall, btnInsertPredator, btnInsertPlayer, btnInsertHitpointsDrone);
     }
 
     @Override
@@ -163,7 +195,7 @@ public class DroneWindow extends Application {
             }
         }.start();					// start it
 
-        Scene scene = new Scene(bp, canvasSize*1.5, canvasSize*1.2);
+        Scene scene = new Scene(bp, canvasSize*1.6, canvasSize*1.3);
         // create scene so bigger than canvas,
 
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {

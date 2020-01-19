@@ -3,8 +3,14 @@ package dronegui;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Iterator;
+import java.util.Scanner;
+
+import static java.lang.Double.parseDouble;
+import static java.lang.Integer.parseInt;
+
 
 public class DroneArena {
     private ArrayList<Drone> mDrones;
@@ -24,6 +30,8 @@ public class DroneArena {
         switch (entityFlag){
             case "drone":
                 mDrones.add(new Drone(x, y)); break;
+            case "hitpointsdrone":
+                mDrones.add(new HitpointsDrone(x, y)); break;
             case "predator":
                 mDrones.add(new PredatorDrone(x, y)); break;
             case "wall":
@@ -61,42 +69,43 @@ public class DroneArena {
     }
 
     public void updateArena(MyCanvas mc){
-
-        Random random = new Random();
-        if(mDrones != null) {
-            for (Drone d : mDrones) {
-                //if the drone is a predator
-                if (d.getClass() == PredatorDrone.class && mPlayer != null) {
-                    ((PredatorDrone) d).setHasTarget(true);
-                    ((PredatorDrone) d).setTarget(mPlayer);
-                    d.interact(mPlayer);
-                    if(mPlayer.isAlive() == false){
-                        mPlayer = null;
-                    }
-                } else if (d.getClass() == PredatorDrone.class && mPlayer == null) {
-                    for (Drone e : mDrones) {
-                        d.interact(e);
-                    }
+        for (Drone d : mDrones) {
+            //if the drone is a predator
+            if (d.getClass() == PredatorDrone.class && mPlayer != null) {
+                ((PredatorDrone) d).setHasTarget(true);
+                ((PredatorDrone) d).setTarget(mPlayer);
+                d.interact(mPlayer);
+                if(mPlayer.isAlive() == false){
+                    mPlayer = null;
                 }
-
-                if (mDrones != null) {
-                    for (Drone e : mDrones) { //collision detection
-                        if(e.getClass() != PredatorDrone.class) {
-                            d.interact(e);
-                        }
-                    }
+            } else if (d.getClass() == PredatorDrone.class && mPlayer == null) {
+                for (Drone e : mDrones) {
+                    d.interact(e);
                 }
+            }
 
-                if (mWalls != null && d != null) {
-                    for (Wall e : mWalls) {
-                        e.interact(d);
-                    }
+            for (Drone e : mDrones) { //collision detection
+                if(e.getClass() != PredatorDrone.class && e != null) {
+                    d.interact(e);
                 }
+            }
 
-                //put move method on player here
+            for (Wall e : mWalls) { //if its a wall
+                e.interact(d);
+            }
 
-                d.checkDrone(mc);
-                d.adjustDrone();
+            d.checkDrone(mc);
+            d.adjustDrone();
+        }
+
+
+        //need to go over to look for drones with <0 HP with an iterator because you cannot remove drones
+        //from an arraylist without a concurrentModificationException
+        Iterator<Drone> iter = mDrones.iterator();
+        while(iter.hasNext()){
+            Drone d = iter.next();
+            if(d.getClass() == HitpointsDrone.class && ((HitpointsDrone) d).getHitPoints() <= 0){
+                iter.remove();
             }
         }
     }
@@ -149,20 +158,93 @@ public class DroneArena {
         }
     }
 
-    public void save(){
-        //ask what to call the filename to save.
-        //for walls and player, just save, put nothing underneath heading if one doesn't exist.
-        //for drones, you need to specify the type of drone when saving, so they need an additional item.
-        //save positions, ID, type and rest can be loaded.
+    public void save(String fileName){
+        //save method from last time
+        //ask for file name which you wish to call it using a text dialogue
+        File arenaFile = new File(fileName);
 
-        //could have a save method in each drone and call it here maybe.
+        try{
+            FileWriter outFileWriter = new FileWriter(arenaFile);
+            PrintWriter fw = new PrintWriter(outFileWriter); //allows to print to file
+
+            for(Drone d : mDrones){
+                if(d.getClass() == Drone.class) {
+                    fw.print("DRONE" + " " + d.getXPosition() + " " + d.getYPosition() + " ");
+                } else if (d.getClass() == PredatorDrone.class){
+                    fw.print("PREDATOR" + " " + d.getXPosition() + " " + d.getYPosition() + " ");
+                } else if (d.getClass() == HitpointsDrone.class){
+                    fw.print("HPDRONE" + " " + d.getXPosition() + " " + d.getYPosition() + " "
+                            + ((HitpointsDrone) d).getHitPoints() + " ");
+                }
+            }
+            for(Wall d : mWalls){
+                fw.print("WALL" + " " + d.getXPosition() + " " + d.getYPosition() + " ");
+            }
+            if(mPlayer != null){
+                fw.print("PLAYER" + " " + mPlayer.getXPosition() + " " + mPlayer.getYPosition() + " ");
+            }
+
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void load(){
-        //ask what filename to load, create error if doesn't exist
-        //if exists, go through mDrones, mWalls and mPlayer, only need to save positions AND TYPE (for drones)
-        //with a delimiter
-        //When you load, DELETE ALL ENTITIES FIRST.
-        //when you load add to each separate array.
+    public void load(String fileName){
+        String[] strArray;
+        double tempX, tempY;
+        int tempHP;
+
+        //clear all of the current arena.
+        mDrones.clear();
+        mWalls.clear();
+        mPlayer = null;
+
+        //create reader for the file.
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File(fileName)); //makes file reader
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String str=scanner.nextLine(); //read the file
+        strArray=str.split(" "); //split it into an array
+
+        for(int i = 0; i < strArray.length; i++){
+            switch(strArray[i]){
+                case "DRONE":
+                    //go through next two locations, use them to create a drone then leave it as it goes on to the next one
+                    i++; tempX = parseDouble(strArray[i]);//convert to double
+                    i++; tempY = parseDouble(strArray[i]);
+                    mDrones.add(new Drone(tempX, tempY));
+                    break;
+                case "PREDATOR":
+                    //go through next two locations, use them to create a predatordrone
+                    i++; tempX = parseDouble(strArray[i]);
+                    i++; tempY = parseDouble(strArray[i]);
+                    mDrones.add(new PredatorDrone(tempX, tempY));
+                    break;
+                case "HPDRONE":
+                    //go through next THREE locations, use to create hpdrone with other constructor
+                    i++; tempX = parseDouble(strArray[i]);
+                    i++; tempY = parseDouble(strArray[i]);
+                    i++; tempHP = parseInt(strArray[i]);
+                    mDrones.add(new HitpointsDrone(tempX, tempY, tempHP));
+                    break;
+                case "WALL":
+                    //go through next two locations, use them to create a wall
+                    i++; tempX = parseDouble(strArray[i]);
+                    i++; tempY = parseDouble(strArray[i]);
+                    mWalls.add(new Wall(tempX, tempY));
+                    break;
+                case "PLAYER":
+                    i++; tempX = parseDouble(strArray[i]);
+                    i++; tempY = parseDouble(strArray[i]);
+                    mPlayer = new PlayerDrone(tempX, tempY);
+                default:
+                    break;
+            }
+        } //end of for loop
     }
 }
