@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="dronegui:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dronegui_jar</output-path>
+    <root id="archive" name="dronegui.jar">
+      <element id="module-output" name="dronegui" />
+    </root>
+  </artifact>
+</component>

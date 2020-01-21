@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="dronegui:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dronegui/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testcollision.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dronegui_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/predator.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testtt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Drone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Drone.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneArena.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneArena.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$3.class" afterDir="false" />
@@ -17,13 +28,20 @@
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/DroneWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/HitpointsDrone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/HitpointsDrone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/MyCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/MyCanvas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/PlayerDrone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/PlayerDrone.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/PredatorDrone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/PredatorDrone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dronegui/dronegui/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dronegui/dronegui/Wall.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Drone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/DroneArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/DroneArena.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/DroneWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/DroneWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dronegui/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/HitpointsDrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/HitpointsDrone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dronegui/PlayerDrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/PlayerDrone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dronegui/PredatorDrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/PredatorDrone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dronegui/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dronegui/Wall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +129,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Year_2_programming" />
@@ -236,44 +255,69 @@
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state x="491" y="67" width="374" height="624" key="#com.intellij.ide.util.MemberChooser/0.20.1366.748@0.20.1366.748" timestamp="1579186067182" />
-    <state x="529" y="266" width="298" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1574936865538">
-      <screen x="0" y="0" width="1366" height="748" />
+    <state x="411" y="180" width="525" height="424" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579636326047">
+      <screen x="0" y="20" width="1366" height="748" />
+    </state>
+    <state x="411" y="180" width="525" height="424" key="#com.intellij.ide.util.TreeClassChooserDialog/0.20.1366.748@0.20.1366.748" timestamp="1579636326047" />
+    <state x="529" y="286" width="296" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579637460005">
+      <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state x="529" y="266" width="298" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.748@0.0.1366.748" timestamp="1574936865538" />
+    <state x="529" y="286" width="296" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.20.1366.748@0.20.1366.748" timestamp="1579637460005" />
     <state x="416" y="130" width="524" height="497" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579359585647">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state x="416" y="130" width="524" height="497" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.20.1366.748@0.20.1366.748" timestamp="1579359585647" />
-    <state x="332" y="139" width="424" height="482" key="FileChooserDialogImpl" timestamp="1579364280179">
+    <state x="427" y="116" width="500" height="524" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579636178023">
+      <screen x="0" y="20" width="1366" height="748" />
+    </state>
+    <state x="427" y="116" width="500" height="524" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.20.1366.748@0.20.1366.748" timestamp="1579636178023" />
+    <state x="332" y="139" width="657" height="482" key="FileChooserDialogImpl" timestamp="1579637987153">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state x="332" y="119" width="682" height="505" key="FileChooserDialogImpl/0.0.1366.748@0.0.1366.748" timestamp="1574937032642" />
-    <state x="332" y="139" width="424" height="482" key="FileChooserDialogImpl/0.20.1366.748@0.20.1366.748" timestamp="1579364280179" />
-    <state width="1324" height="2" key="GridCell.Tab.0.bottom" timestamp="1579447708997">
+    <state x="332" y="139" width="657" height="482" key="FileChooserDialogImpl/0.20.1366.748@0.20.1366.748" timestamp="1579637987153" />
+    <state width="1324" height="125" key="GridCell.Tab.0.bottom" timestamp="1579637339490">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.bottom/0.0.1366.748@0.0.1366.748" timestamp="1574949736580" />
-    <state width="1324" height="2" key="GridCell.Tab.0.bottom/0.20.1366.748@0.20.1366.748" timestamp="1579447708997" />
-    <state width="1324" height="2" key="GridCell.Tab.0.center" timestamp="1579447708997">
+    <state width="1324" height="125" key="GridCell.Tab.0.bottom/0.20.1366.748@0.20.1366.748" timestamp="1579637339490" />
+    <state width="1324" height="125" key="GridCell.Tab.0.center" timestamp="1579637339489">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.center/0.0.1366.748@0.0.1366.748" timestamp="1574949736579" />
-    <state width="1324" height="2" key="GridCell.Tab.0.center/0.20.1366.748@0.20.1366.748" timestamp="1579447708997" />
-    <state width="1324" height="2" key="GridCell.Tab.0.left" timestamp="1579447708996">
+    <state width="1324" height="125" key="GridCell.Tab.0.center/0.20.1366.748@0.20.1366.748" timestamp="1579637339489" />
+    <state width="1324" height="125" key="GridCell.Tab.0.left" timestamp="1579637339489">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.left/0.0.1366.748@0.0.1366.748" timestamp="1574949736577" />
-    <state width="1324" height="2" key="GridCell.Tab.0.left/0.20.1366.748@0.20.1366.748" timestamp="1579447708996" />
-    <state width="1324" height="2" key="GridCell.Tab.0.right" timestamp="1579447708997">
+    <state width="1324" height="125" key="GridCell.Tab.0.left/0.20.1366.748@0.20.1366.748" timestamp="1579637339489" />
+    <state width="1324" height="125" key="GridCell.Tab.0.right" timestamp="1579637339489">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state width="1326" height="180" key="GridCell.Tab.0.right/0.0.1366.748@0.0.1366.748" timestamp="1574949736579" />
-    <state width="1324" height="2" key="GridCell.Tab.0.right/0.20.1366.748@0.20.1366.748" timestamp="1579447708997" />
-    <state x="166" y="20" width="1024" height="746" key="SettingsEditor" timestamp="1575585386799">
+    <state width="1324" height="125" key="GridCell.Tab.0.right/0.20.1366.748@0.20.1366.748" timestamp="1579637339489" />
+    <state width="1324" height="235" key="GridCell.Tab.1.bottom" timestamp="1579625410083">
+      <screen x="0" y="20" width="1366" height="748" />
+    </state>
+    <state width="1324" height="235" key="GridCell.Tab.1.bottom/0.20.1366.748@0.20.1366.748" timestamp="1579625410083" />
+    <state width="1324" height="235" key="GridCell.Tab.1.center" timestamp="1579625410082">
+      <screen x="0" y="20" width="1366" height="748" />
+    </state>
+    <state width="1324" height="235" key="GridCell.Tab.1.center/0.20.1366.748@0.20.1366.748" timestamp="1579625410082" />
+    <state width="1324" height="235" key="GridCell.Tab.1.left" timestamp="1579625410082">
+      <screen x="0" y="20" width="1366" height="748" />
+    </state>
+    <state width="1324" height="235" key="GridCell.Tab.1.left/0.20.1366.748@0.20.1366.748" timestamp="1579625410082" />
+    <state width="1324" height="235" key="GridCell.Tab.1.right" timestamp="1579625410083">
+      <screen x="0" y="20" width="1366" height="748" />
+    </state>
+    <state width="1324" height="235" key="GridCell.Tab.1.right/0.20.1366.748@0.20.1366.748" timestamp="1579625410083" />
+    <state x="166" y="20" width="1024" height="746" key="SettingsEditor" timestamp="1579637995465">
       <screen x="0" y="20" width="1366" height="748" />
     </state>
     <state x="166" y="0" width="1024" height="746" key="SettingsEditor/0.0.1366.748@0.0.1366.748" timestamp="1574937941524" />
-    <state x="166" y="20" width="1024" height="746" key="SettingsEditor/0.20.1366.748@0.20.1366.748" timestamp="1575585386799" />
+    <state x="166" y="20" width="1024" height="746" key="SettingsEditor/0.20.1366.748@0.20.1366.748" timestamp="1579637995465" />
     <state x="367" y="221" key="com.intellij.ide.util.TipDialog" timestamp="1578334265570">
       <screen x="0" y="20" width="1366" height="748" />
     </state>

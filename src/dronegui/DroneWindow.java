@@ -27,70 +27,83 @@ public class DroneWindow extends Application {
     private boolean mAnimationOn;
     private String mEntityFlag = "drone";
 
+    /**
+     * Creates the pane which displays drone information
+     */
     public void drawStatus() {
         rtPane.getChildren().clear();
-        Label label = new Label(mArena.toString()); //put drone info here (tostring method)
-        rtPane.getChildren().add(label);
+        Label label = new Label(mArena.toString()); //creating a label with drone information
+        rtPane.getChildren().add(label); //adding the label to the right pane
     }
 
+    /**
+     * Creates a mouse event listener which creates a drone on the position clicked with the specified delimiter
+     * @param canvas    Canvas  used for adding the event handler
+     */
     private void setMouseEvents (Canvas canvas) {
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED,
                 new EventHandler<MouseEvent>() {
                     @Override
-                    public void handle(MouseEvent e) {
-                        mArena.setArena(mc, e.getX(), e.getY(), mEntityFlag);
-                        mArena.drawArena(mc);
+                    public void handle(MouseEvent e) { //on mouse click
+                        mArena.setArena(mc, e.getX(), e.getY(), mEntityFlag); //pass the current co ordinates and flag
+                        mArena.drawArena(mc); //update the arena to reflect the changes
                         drawStatus();
                     }
                 });
     }
 
+    /**
+     * Creates the menu for the top of the screen and all the behaviour associated with the buttons, both save and load
+     * create a textdialogue and call the respective methods based on which button was pressed. The cleararena button simply
+     * calls that method in DroneArena to clear the arena.
+     * @return the VBox containing the menu
+     */
     private VBox setMenu(){
-        MenuBar menuBar = new MenuBar();
+        MenuBar menuBar = new MenuBar(); //create new menue
         VBox menuBox = new VBox(menuBar);
         Menu fileMenu = new Menu("File");
         menuBar.getMenus().add(fileMenu);
 
-        MenuItem save = new MenuItem("save");
+        MenuItem save = new MenuItem("save"); //set menu titles
         MenuItem load = new MenuItem("load");
         MenuItem clear = new MenuItem("clear all");
 
-        fileMenu.getItems().add(save);
+        fileMenu.getItems().add(save); //add menu options
         fileMenu.getItems().add(load);
         fileMenu.getItems().add(clear);
 
-        save.setOnAction((e -> {
-            TextInputDialog saveDialog = new TextInputDialog("filename.txt");
+        save.setOnAction((e -> { //set behaviour for save button
+            TextInputDialog saveDialog = new TextInputDialog("filename.txt"); //make a new textdialogue
             saveDialog.setTitle("Save Arena");
             saveDialog.setHeaderText("Enter File Name");
             saveDialog.setHeaderText("Enter File Name");
 
-            Optional<String> result = saveDialog.showAndWait();
+            Optional<String> result = saveDialog.showAndWait(); //show text dialogue
 
-            result.ifPresent((name -> {
+            result.ifPresent((name -> { //call save with the returned value
                 mArena.save(name);
             }));
         }));
 
-        load.setOnAction((e -> {
-            TextInputDialog loadDialog = new TextInputDialog("filename.txt");
+        load.setOnAction((e -> { //set behaviour for load button
+            TextInputDialog loadDialog = new TextInputDialog("filename.txt"); //make a new textdialogue
             loadDialog.setTitle("Load Arena");
             loadDialog.setHeaderText("Enter File Name");
             loadDialog.setHeaderText("Enter File Name");
 
-            Optional<String> result = loadDialog.showAndWait();
+            Optional<String> result = loadDialog.showAndWait(); //show text dialogue
 
             result.ifPresent((name -> {
-                mArena.load(name);
-                mArena.drawArena(mc);
+                mArena.load(name); //call load with the returned value
+                mArena.drawArena(mc); //update arena to reflect changes
                 drawStatus();
             }));
         }));
 
 
-        clear.setOnAction((e -> {
-            mArena.clearArena();
-            drawStatus();
+        clear.setOnAction((e -> { //set clear button behaviour
+            mArena.clearArena(); //call clear in arena
+            drawStatus(); //update arena to reflect changes
             mArena.drawArena(mc);
         }));
 
@@ -98,18 +111,21 @@ public class DroneWindow extends Application {
         return menuBox;
     }
 
+    /**
+     * Sets up and returns all buttons which stop and start the animation as well as set the flag to the drone respective
+     * of the button.
+     * @return the HBox containing the buttons
+     */
     private HBox setButtons(){
-        Button btnAnimOn = new Button("Start");
-        // now add handler
-        btnAnimOn.setOnAction(new EventHandler<ActionEvent>() {
+        Button btnAnimOn = new Button("Start"); //create a button
+        btnAnimOn.setOnAction(new EventHandler<ActionEvent>() { //add a handler for the button
             @Override
             public void handle(ActionEvent event) {
-                mAnimationOn = true;
+                mAnimationOn = true; //start animation
             }
         });
 
         Button btnAnimOff = new Button("Stop");
-        // now add handler
         btnAnimOff.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -163,6 +179,10 @@ public class DroneWindow extends Application {
                 btnInsertDrone, btnInsertWall, btnInsertPredator, btnInsertPlayer, btnInsertHitpointsDrone);
     }
 
+    /**
+     * calls all of the methods which return the menus, toolbars and right pane, as well as starts the animation
+     * @param stagePrimary      Stage      used to open the window
+     */
     @Override
      public void start(Stage stagePrimary) throws Exception{
         stagePrimary.setTitle("Braian Strak, 27001448, Drone Animation");
@@ -209,9 +229,9 @@ public class DroneWindow extends Application {
         }.start();					// start it
 
         Scene scene = new Scene(bp, canvasSize*1.9, canvasSize*1.3);
-        // create scene so bigger than canvas,
+        // create scene bigger than canvas,
 
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>() { //start animation
             @Override
             public void handle(KeyEvent event) {
                 if(mArena.getPlayer() != null) {
